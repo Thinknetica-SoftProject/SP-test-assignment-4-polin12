@@ -15,5 +15,15 @@
 #
 #
 ## Решение:
-
+f = File.new("data/4.txt","r:UTF-8")
+lines = f.readlines
+sum = 0
+for item in lines do
+    st = item.chomp
+    ss = st.split("x").map { |s| s.to_i }
+    ind = (0...ss.size).sort_by{ |i| ss[i] }
+    paper = 2*ss[0]*ss[1] + 2*ss[0]*ss[2] + 2*ss[1]*ss[2] + ss[ind[0]]*ss[ind[1]]
+    sum += paper
+end
+puts(sum)
 

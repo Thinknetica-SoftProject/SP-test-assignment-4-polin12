@@ -15,4 +15,17 @@
 #
 #
 ## Решение:
+require "digest"
+inp = gets.chomp
+f = 0
+n = 1
+while f == 0 do
+    cn = inp + n.to_s
+    h = Digest::MD5.hexdigest(cn) 
+    if h[0..4] == "00000"
+        f = 1
+    end
+    n += 1
+end
+puts(n-1)
 

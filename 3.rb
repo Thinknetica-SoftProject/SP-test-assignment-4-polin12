@@ -9,5 +9,15 @@
 # - Результат должен быть выведен в консоль командой puts
 #
 ## Решение:
-
-
+f = File.new("data/3.txt","r:UTF-8")
+lines = f.readlines
+sum = 0
+for item in lines do
+    st = item.chomp
+    ss = st.split(/\t/).map { |s| s.to_i }
+    mx = ss.max 
+    mn = ss.min
+    df = mx - mn
+    sum = sum + df 
+end
+puts(sum)

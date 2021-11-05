@@ -15,7 +15,19 @@
 #
 #
 ## Решение:
-
+file = File.new("data/1.txt","r:UTF-8")
+lines = file.read
+k = 0
+lines.each_char do |char|
+    if char == "("
+        k+=1
+      end
+      if char == ")"
+        k-=1
+      end
+end
+puts(k)
+file.close
 
 
 
